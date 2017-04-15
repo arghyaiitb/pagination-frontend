@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { appRouting } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PublishBookComponent } from './publish-book/publish-book.component';
 import { AboutComponent } from './about/about.component';
 import { RecentlyPublishedComponent } from './recently-published/recently-published.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { RecentlyPublishedComponent } from './recently-published/recently-publis
     HomeComponent,
     PublishBookComponent,
     AboutComponent,
-    RecentlyPublishedComponent
+    RecentlyPublishedComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    appRouting
   ],
   providers: [],
   bootstrap: [AppComponent]

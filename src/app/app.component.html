@@ -1,7 +1,22 @@
-<h1>
-  {{title}}
-  <app-about></app-about>
-  <app-home></app-home>
-  <app-publish-book></app-publish-book>
-  <app-recently-published></app-recently-published>
-</h1>
+<header>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a routerLink="/home" class="navbar-brand" routerLinkActive="active">pagination</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/home" routerLinkActive="active">home</a></li>
+        <li><a routerLink="/publish-book" routerLinkActive="active">Publish Book</a></li>
+        <li><a routerLink="/recently-published" routerLinkActive="active">Recently Published</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+      </ul>
+
+    </div>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer class="text-center">
+  Copyright &copy; <a href='https://www.linkedin.com/in/arghyasaha/'>argo</a>  2017
+</footer>
