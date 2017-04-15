@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { appRouting } from './app-routing.module';
@@ -11,6 +11,8 @@ import { AboutComponent } from './about/about.component';
 import { RecentlyPublishedComponent } from './recently-published/recently-published.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import {NewBookFormComponent } from './publish-book/new-book-form.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +20,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PublishBookComponent,
     AboutComponent,
     RecentlyPublishedComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+
+    NewBookFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     appRouting
   ],
   providers: [],
