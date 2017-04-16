@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Customer } from './publish-book.interface';
+import { BasicDetails } from './new-book-model.interface';
 
 @Component({
   selector: 'new-book-form',
@@ -11,7 +11,7 @@ import { Customer } from './publish-book.interface';
 export class NewBookFormComponent implements OnInit {
   public myForm: FormGroup; // our model driven form
 
-  // standing data
+
   public LANGUAGE_OPTIONS = {
     ENGLISH: 'english',
     HINDI: 'hindi',
@@ -23,12 +23,17 @@ export class NewBookFormComponent implements OnInit {
   ngOnInit() {
 
       this.myForm = this._fb.group({
-          name: ['Jane Doe'],
-          languageSelector: this.initLanguageSelectorGroup()
+          title: ['Title of the ebook', [Validators.required]],
+          author: ['Book Author', [Validators.required]],
+          series: ['Yes', [Validators.required]],
+          edition: ['First', [Validators.required]],
+          description: [' Anything', [Validators.required]],
+          keywords: ['', [Validators.required]],
+          reading_age: ['', [Validators.required]],
+          genre: ['', [Validators.required]],
+          languageSelector: this.initLanguageSelectorGroup(),
+          publishing_rights: ['Story_mirror']
       });
-
-      
-
 
       this.setLanguageSelectorMethodType(this.LANGUAGE_OPTIONS.ENGLISH);
   }
@@ -81,7 +86,7 @@ export class NewBookFormComponent implements OnInit {
     ctrl.setValue(type);
   }
 
-  save(model: Customer, isValid: boolean) {
+  save(model: BasicDetails, isValid: boolean) {
       // call API to save
       // ...
       console.log(model, isValid);
