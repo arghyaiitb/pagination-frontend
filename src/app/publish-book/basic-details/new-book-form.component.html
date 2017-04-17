@@ -12,6 +12,7 @@
            Required.
           </small>
         </div>
+
         <div class="form-group">
           <label>Book Author</label>
           <input type="text" class="form-control" formControlName="author">
@@ -19,6 +20,7 @@
            Required.
           </small>
         </div>
+
         <div class="form-group">
           <label>Book Series</label>
           <input type="text" class="form-control" formControlName="series">
@@ -26,6 +28,7 @@
            Required.
           </small>
         </div>
+
         <div class="form-group">
           <label>Book Edition</label>
           <input type="text" class="form-control" formControlName="edition">
@@ -33,6 +36,7 @@
            Required.
           </small>
         </div>
+
         <div class="form-group">
           <label>Description</label>
           <input type="text" class="form-control" formControlName="description">
@@ -40,6 +44,7 @@
            Required.
           </small>
         </div>
+
         <div class="form-group">
           <label>Book keywords</label>
           <input type="text" class="form-control" formControlName="keywords">
@@ -47,6 +52,7 @@
            Required.
           </small>
         </div>
+
         <div class="form-group">
           <label>Book Reading age</label>
           <input type="text" class="form-control" formControlName="reading_age">
@@ -61,87 +67,6 @@
           <small *ngIf="!myForm.controls.genre.valid" class="text-danger">
            Required.
           </small>
-        </div>
-
-
-        <div class="form-group">
-          <label>Language Details</label>
-        </div>
-        <div formGroupName="languageSelector">
-
-          <div >
-            <div class="btn btn-primary">
-              <button type="button" (click)="setLanguageSelectorMethodType(LANGUAGE_OPTIONS.ENGLISH)" class="btn btn-block text-capitalize" [class.btn-default]="myForm.controls.languageSelector.controls.type.value !== LANGUAGE_OPTIONS.ENGLISH" [class.btn-primary]="myForm.controls.languageSelector.controls.type.value === LANGUAGE_OPTIONS.ENGLISH">
-                {{ LANGUAGE_OPTIONS.ENGLISH }}
-              </button>
-            </div>
-            <div class="btn btn-primary">
-              <button type="button" (click)="setLanguageSelectorMethodType(LANGUAGE_OPTIONS.HINDI)" class="btn btn-block text-capitalize" [class.btn-default]="myForm.controls.languageSelector.controls.type.value !== LANGUAGE_OPTIONS.HINDI" [class.btn-primary]="myForm.controls.languageSelector.controls.type.value === LANGUAGE_OPTIONS.HINDI">
-                {{ LANGUAGE_OPTIONS.HINDI }}
-              </button>
-            </div>
-            <div class="btn btn-primary">
-              <button type="button" (click)="setLanguageSelectorMethodType(LANGUAGE_OPTIONS.ORIYA)"
-              class="btn btn-block text-capitalize"
-              [class.btn-default]="myForm.controls.languageSelector.controls.type.value !== LANGUAGE_OPTIONS.ORIYA"
-              [class.btn-primary]="myForm.controls.languageSelector.controls.type.value === LANGUAGE_OPTIONS.ORIYA">
-                {{ LANGUAGE_OPTIONS.ORIYA }}
-              </button>
-            </div>
-          </div>
-
-          <div class="panel panel-default margin-20" *ngIf="myForm.controls.languageSelector.controls.type.value === LANGUAGE_OPTIONS.ENGLISH">
-            <div class="panel-body">
-              <div class="form-group col-xs-8" formGroupName="english">
-                <label>English Font</label>
-                <input type="text" class="form-control" formControlName="english_font">
-                <small *ngIf="!myForm.controls.languageSelector.controls.english.controls.english_font.valid" class="text-danger">
-                 Required.
-                </small>
-              </div>
-
-            </div>
-          </div>
-          <div class="panel panel-default margin-20" *ngIf="myForm.controls.languageSelector.controls.type.value === LANGUAGE_OPTIONS.HINDI">
-            <div class="panel-body">
-              <div class="form-group col-xs-8" formGroupName="hindi">
-                <label>English Font</label>
-                <input type="text" class="form-control" formControlName="english_font">
-                <small *ngIf="!myForm.controls.languageSelector.controls.hindi.controls.english_font.valid" class="text-danger">
-                 Required
-                </small>
-              </div>
-              <div class="form-group col-xs-8" formGroupName="hindi">
-                <label>Hindi Font</label>
-                <input type="text" class="form-control" formControlName="hindi_font">
-                <small *ngIf="!myForm.controls.languageSelector.controls.hindi.controls.hindi_font.valid" class="text-danger">
-                 Required
-                </small>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="panel panel-default margin-20" *ngIf="myForm.controls.languageSelector.controls.type.value === LANGUAGE_OPTIONS.ORIYA">
-            <div class="panel-body">
-              <div class="form-group col-xs-8" formGroupName="oriya">
-                <label>English Font</label>
-                <input type="text" class="form-control" formControlName="english_font">
-                <small *ngIf="!myForm.controls.languageSelector.controls.oriya.controls.english_font.valid" class="text-danger">
-                 Required
-
-                </small>
-              </div>
-              <div class="form-group col-xs-8" formGroupName="oriya">
-                <label>Oriya Font</label>
-                <input type="text" class="form-control" formControlName="oriya_font">
-                <small *ngIf="!myForm.controls.languageSelector.controls.oriya.controls.oriya_font.valid" class="text-danger">
-                 Required
-                </small>
-              </div>
-
-            </div>
-          </div>
         </div>
 
         <div class="form-group">
@@ -163,6 +88,7 @@
           <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
           <pre>form value: <br>{{myForm.value | json}}</pre>
         </div>
+
       </form>
     </div>
   </div>

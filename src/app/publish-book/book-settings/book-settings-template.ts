@@ -63,7 +63,7 @@ export const templates: BookSettings[] = [
     book_dimension_template: '12x9in',
     book_dimension: { page_width: '9in', page_heigth: '12in' },
     language_font: {
-      language: 'english', font: {
+      language: 'bengali', font: {
         primary_font: 'ENGLISH',
         secondary_font: 'HINDI'
       }
@@ -81,4 +81,7 @@ export const templates: BookSettings[] = [
       footer: 'testing'
     }
   }
-]
+];
+
+
+export const languageAvailable = ['english', 'hindi', 'oriya','bengali'];
