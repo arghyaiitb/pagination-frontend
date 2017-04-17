@@ -2,7 +2,7 @@
   <label class="center-block">Select templates</label>
 
   <a *ngFor="let template of templates">
-    <button class="btn btn-primary" (click)="loadtemplate(template)">  {{template.book_dimension_template}}</button>
+    <button class="btn btn-primary" (click)="loadtemplate(template)"> {{template.book_dimension_template}}</button>
   </a>
 </nav>
 
@@ -10,8 +10,8 @@
 
   <div class="form-group">
     <label class="center-block"> Template Name:
-        <input class="form-control" formControlName="book_dimension_template">
-      </label>
+      <input class="form-control" formControlName="book_dimension_template">
+    </label>
   </div>
 
   <div class="form-group" formGroupName="book_dimension">
@@ -20,15 +20,15 @@
       <label>page_width</label>
       <input type="text" class="form-control" formControlName="page_width">
       <small *ngIf="!bookForm.controls.book_dimension.controls.page_width.valid" class="text-danger">
-     Required
-    </small>
+        Required
+      </small>
     </div>
     <div class="form-group col-xs-8">
       <label>page_heigth</label>
       <input type="text" class="form-control" formControlName="page_heigth">
       <small *ngIf="!bookForm.controls.book_dimension.controls.page_heigth.valid" class="text-danger">
-     Required
-    </small>
+        Required
+      </small>
     </div>
   </div>
 
@@ -37,10 +37,10 @@
 
     <div class="form-group col-xs-8">
       <label class="center-block">Language:
-            <select class="form-control" formControlName="language">
-              <option *ngFor="let language of languagesAvailable" [value]="language">{{language}}</option>
-            </select>
-          </label>
+        <select class="form-control" formControlName="language">
+          <option *ngFor="let language of languagesAvailable" [value]="language">{{language}}</option>
+        </select>
+      </label>
     </div>
 
     <div class="form-group" formGroupName="font">
@@ -49,15 +49,15 @@
         <label>primary_font</label>
         <input type="text" class="form-control" formControlName="primary_font">
         <small *ngIf="!bookForm.controls.language_font.controls.font.controls.primary_font.valid" class="text-danger">
-       Required
-      </small>
+          Required
+        </small>
       </div>
       <div class="form-group col-xs-8">
         <label>secondary_font</label>
         <input type="text" class="form-control" formControlName="secondary_font">
         <small *ngIf="!bookForm.controls.language_font.controls.font.controls.secondary_font.valid" class="text-danger">
-       Required
-      </small>
+          Required
+        </small>
       </div>
     </div>
   </div>
@@ -69,43 +69,43 @@
       <label>top_margin</label>
       <input type="text" class="form-control" formControlName="top_margin">
       <small *ngIf="!bookForm.controls.margin.controls.top_margin.valid" class="text-danger">
-     Required
-    </small>
+        Required
+      </small>
     </div>
     <div class="form-group col-xs-8">
       <label>bottom_margin</label>
       <input type="text" class="form-control" formControlName="bottom_margin">
       <small *ngIf="!bookForm.controls.margin.controls.bottom_margin.valid" class="text-danger">
-     Required
-    </small>
+        Required
+      </small>
     </div>
     <div class="form-group col-xs-8">
       <label>top_margin</label>
       <input type="text" class="form-control" formControlName="inner_margin">
       <small *ngIf="!bookForm.controls.margin.controls.inner_margin.valid" class="text-danger">
-     Required
-    </small>
+        Required
+      </small>
     </div>
     <div class="form-group col-xs-8">
       <label>bottom_margin</label>
       <input type="text" class="form-control" formControlName="outer_margin">
       <small *ngIf="!bookForm.controls.margin.controls.outer_margin.valid" class="text-danger">
-     Required
-    </small>
+        Required
+      </small>
     </div>
     <div class="form-group col-xs-8">
       <label>top_margin</label>
       <input type="text" class="form-control" formControlName="line_spacing">
       <small *ngIf="!bookForm.controls.margin.controls.line_spacing.valid" class="text-danger">
-     Required
-    </small>
+        Required
+      </small>
     </div>
     <div class="form-group col-xs-8">
       <label>bottom_margin</label>
       <input type="text" class="form-control" formControlName="paragraph_spacing">
       <small *ngIf="!bookForm.controls.margin.controls.paragraph_spacing.valid" class="text-danger">
-     Required
-    </small>
+        Required
+      </small>
     </div>
   </div>
 
@@ -115,15 +115,15 @@
       <label>header</label>
       <input type="text" class="form-control" formControlName="header">
       <small *ngIf="!bookForm.controls.addons.controls.header.valid" class="text-danger">
-     Required
-    </small>
+        Required
+      </small>
     </div>
     <div class="form-group col-xs-8">
       <label>footer</label>
       <input type="text" class="form-control" formControlName="footer">
       <small *ngIf="!bookForm.controls.addons.controls.footer.valid" class="text-danger">
-     Required
-    </small>
+        Required
+      </small>
     </div>
   </div>
 
@@ -137,12 +137,5 @@
     <pre>Is myForm valid?: <br>{{bookForm.valid | json}}</pre>
     <pre>form value: <br>{{bookForm.value | json}}</pre>
   </div>
-
-
-
-
-
-
-
 
 </form>

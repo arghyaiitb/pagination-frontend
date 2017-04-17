@@ -22,4 +22,5 @@ export interface BasicDetails {
     }
   },
   publishing_rights: string
-};
+}
+;

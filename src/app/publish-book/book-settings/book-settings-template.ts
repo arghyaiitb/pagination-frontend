@@ -38,7 +38,7 @@ export class AdditionalFeatures {
 export const templates: BookSettings[] = [
   {
     book_dimension_template: '8x6in',
-    book_dimension: { page_width: '6in', page_heigth: '8in' },
+    book_dimension: {page_width: '6in', page_heigth: '8in'},
     language_font: {
       language: 'english', font: {
         primary_font: 'ENGLISH',
@@ -61,7 +61,7 @@ export const templates: BookSettings[] = [
 
   {
     book_dimension_template: '12x9in',
-    book_dimension: { page_width: '9in', page_heigth: '12in' },
+    book_dimension: {page_width: '9in', page_heigth: '12in'},
     language_font: {
       language: 'bengali', font: {
         primary_font: 'ENGLISH',
@@ -84,4 +84,4 @@ export const templates: BookSettings[] = [
 ];
 
 
-export const languageAvailable = ['english', 'hindi', 'oriya','bengali'];
+export const languageAvailable = ['english', 'hindi', 'oriya', 'bengali'];

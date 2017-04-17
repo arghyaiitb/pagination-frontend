@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { BookPrintInfo } from './book-settings-model.interface';
-import { BookSettings, templates, languageAvailable } from './book-settings-template';
+import {Component, OnInit} from "@angular/core";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {BookPrintInfo} from "./book-settings-model.interface";
+import {BookSettings, languageAvailable, templates} from "./book-settings-template";
 
 
 @Component({
@@ -16,7 +16,8 @@ export class BookSettingsFormComponent implements OnInit {
   private selected_template: BookSettings;
   public languagesAvailable = languageAvailable;
 
-  constructor(private _fb: FormBuilder) { } // form builder simplify form initialization
+  constructor(private _fb: FormBuilder) {
+  } // form builder simplify form initialization
 
   ngOnInit() {
     this.bookForm = this._fb.group({

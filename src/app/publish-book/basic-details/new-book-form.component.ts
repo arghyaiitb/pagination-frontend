@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { BasicDetails } from './new-book-model.interface';
+import {Component, OnInit} from "@angular/core";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {BasicDetails} from "./new-book-model.interface";
 
 @Component({
   selector: 'new-book-form',
@@ -18,7 +18,8 @@ export class NewBookFormComponent implements OnInit {
     ORIYA: 'oriya'
   };
 
-  constructor(private _fb: FormBuilder) { } // form builder simplify form initialization
+  constructor(private _fb: FormBuilder) {
+  } // form builder simplify form initialization
 
   ngOnInit() {
 
