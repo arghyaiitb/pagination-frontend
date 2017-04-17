@@ -11,7 +11,8 @@ import { AboutComponent } from './about/about.component';
 import { RecentlyPublishedComponent } from './recently-published/recently-published.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-import {NewBookFormComponent } from './publish-book/basic-details/new-book-form.component';
+import { NewBookFormComponent } from './publish-book/basic-details/new-book-form.component';
+import { BookSettingsFormComponent } from './publish-book/book-settings/book-settings-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {NewBookFormComponent } from './publish-book/basic-details/new-book-form.
     RecentlyPublishedComponent,
     PageNotFoundComponent,
 
-    NewBookFormComponent
+    NewBookFormComponent,
+    BookSettingsFormComponent
   ],
   imports: [
     BrowserModule,

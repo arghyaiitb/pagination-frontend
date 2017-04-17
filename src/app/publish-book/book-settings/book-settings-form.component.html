@@ -1,166 +1,48 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="margin-20">
-        <h4>Basic Information</h4>
-      </div>
-      <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
-        <div class="form-group">
-          <label>Book Title</label>
-          <input type="text" class="form-control" formControlName="title">
-          <small *ngIf="!myForm.controls.title.valid" class="text-danger">
-           Required.
-          </small>
-        </div>
-        <div class="form-group">
-          <label>Book Author</label>
-          <input type="text" class="form-control" formControlName="author">
-          <small *ngIf="!myForm.controls.author.valid" class="text-danger">
-           Required.
-          </small>
-        </div>
-        <div class="form-group">
-          <label>Book Series</label>
-          <input type="text" class="form-control" formControlName="series">
-          <small *ngIf="!myForm.controls.series.valid" class="text-danger">
-           Required.
-          </small>
-        </div>
-        <div class="form-group">
-          <label>Book Edition</label>
-          <input type="text" class="form-control" formControlName="edition">
-          <small *ngIf="!myForm.controls.edition.valid" class="text-danger">
-           Required.
-          </small>
-        </div>
-        <div class="form-group">
-          <label>Description</label>
-          <input type="text" class="form-control" formControlName="description">
-          <small *ngIf="!myForm.controls.description.valid" class="text-danger">
-           Required.
-          </small>
-        </div>
-        <div class="form-group">
-          <label>Book keywords</label>
-          <input type="text" class="form-control" formControlName="keywords">
-          <small *ngIf="!myForm.controls.keywords.valid" class="text-danger">
-           Required.
-          </small>
-        </div>
-        <div class="form-group">
-          <label>Book Reading age</label>
-          <input type="text" class="form-control" formControlName="reading_age">
-          <small *ngIf="!myForm.controls.reading_age.valid" class="text-danger">
-           Required.
-          </small>
-        </div>
+<nav>
+  <a *ngFor="let template of templates">
+    <button class="btn btn-primary" (click)="loadtemplate(template)">  {{template.book_dimension_template}}</button>
+  </a>
+</nav>
 
-        <div class="form-group">
-          <label>Genre</label>
-          <input type="text" class="form-control" formControlName="genre">
-          <small *ngIf="!myForm.controls.genre.valid" class="text-danger">
-           Required.
-          </small>
-        </div>
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()" novalidate>
+  <div style="margin-bottom: 1em">
+    <button type="submit" [disabled]="bookForm.pristine" class="btn btn-success">Save</button> &nbsp;
+    <button type="reset" (click)="revert()" [disabled]="bookForm.pristine" class="btn btn-danger">Revert</button>
+  </div>
 
+  <div class="form-group">
+    <label class="center-block">Name:
+        <input class="form-control" formControlName="book_dimension_template">
+      </label>
+  </div>
 
-        <div class="form-group">
-          <label>Language Details</label>
-        </div>
-        <div formGroupName="languageSelector">
-
-          <div class="row">
-            <div class="col-xs-6">
-              <button type="button" (click)="setLanguageSelectorMethodType(LANGUAGE_OPTIONS.ENGLISH)" class="btn btn-block text-capitalize" [class.btn-default]="myForm.controls.languageSelector.controls.type.value !== LANGUAGE_OPTIONS.ENGLISH" [class.btn-primary]="myForm.controls.languageSelector.controls.type.value === LANGUAGE_OPTIONS.ENGLISH">
-                {{ LANGUAGE_OPTIONS.ENGLISH }}
-              </button>
-            </div>
-            <div class="col-xs-6">
-              <button type="button" (click)="setLanguageSelectorMethodType(LANGUAGE_OPTIONS.HINDI)" class="btn btn-block text-capitalize" [class.btn-default]="myForm.controls.languageSelector.controls.type.value !== LANGUAGE_OPTIONS.HINDI" [class.btn-primary]="myForm.controls.languageSelector.controls.type.value === LANGUAGE_OPTIONS.HINDI">
-                {{ LANGUAGE_OPTIONS.HINDI }}
-              </button>
-            </div>
-            <div class="col-xs-6">
-              <button type="button" (click)="setLanguageSelectorMethodType(LANGUAGE_OPTIONS.ORIYA)" class="btn btn-block text-capitalize" [class.btn-default]="myForm.controls.languageSelector.controls.type.value !== LANGUAGE_OPTIONS.ORIYA" [class.btn-primary]="myForm.controls.languageSelector.controls.type.value === LANGUAGE_OPTIONS.ORIYA">
-                {{ LANGUAGE_OPTIONS.ORIYA }}
-              </button>
-            </div>
-          </div>
-
-          <div class="panel panel-default margin-20" *ngIf="myForm.controls.languageSelector.controls.type.value === LANGUAGE_OPTIONS.ENGLISH">
-            <div class="panel-body">
-              <div class="form-group col-xs-8" formGroupName="english">
-                <label>English Font</label>
-                <input type="text" class="form-control" formControlName="english_font">
-                <small *ngIf="!myForm.controls.languageSelector.controls.english.controls.english_font.valid" class="text-danger">
-                 Required.
-                </small>
-              </div>
-
-            </div>
-          </div>
-          <div class="panel panel-default margin-20" *ngIf="myForm.controls.languageSelector.controls.type.value === LANGUAGE_OPTIONS.HINDI">
-            <div class="panel-body">
-              <div class="form-group col-xs-8" formGroupName="hindi">
-                <label>English Font</label>
-                <input type="text" class="form-control" formControlName="english_font">
-                <small *ngIf="!myForm.controls.languageSelector.controls.hindi.controls.english_font.valid" class="text-danger">
-                 Required
-                </small>
-              </div>
-              <div class="form-group col-xs-8" formGroupName="hindi">
-                <label>Hindi Font</label>
-                <input type="text" class="form-control" formControlName="hindi_font">
-                <small *ngIf="!myForm.controls.languageSelector.controls.hindi.controls.hindi_font.valid" class="text-danger">
-                 Required
-                </small>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="panel panel-default margin-20" *ngIf="myForm.controls.languageSelector.controls.type.value === LANGUAGE_OPTIONS.ORIYA">
-            <div class="panel-body">
-              <div class="form-group col-xs-8" formGroupName="oriya">
-                <label>English Font</label>
-                <input type="text" class="form-control" formControlName="english_font">
-                <small *ngIf="!myForm.controls.languageSelector.controls.oriya.controls.english_font.valid" class="text-danger">
-                 Required
-
-                </small>
-              </div>
-              <div class="form-group col-xs-8" formGroupName="oriya">
-                <label>Oriya Font</label>
-                <input type="text" class="form-control" formControlName="oriya_font">
-                <small *ngIf="!myForm.controls.languageSelector.controls.oriya.controls.oriya_font.valid" class="text-danger">
-                 Required
-                </small>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Publishing rights</label>
-          <input type="text" class="form-control" formControlName="publishing_rights">
-          <small *ngIf="!myForm.controls.publishing_rights.valid" class="text-danger">
-           Required.
-          </small>
-        </div>
-
-
-        <div class="margin-20">
-          <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button>
-        </div>
-        <div class="clearfix"></div>
-
-        <div class="margin-20">
-          <div>myForm details:-</div>
-          <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
-          <pre>form value: <br>{{myForm.value | json}}</pre>
-        </div>
-      </form>
+  <div class="form-group">
+    <label>Book Dimension</label>
+    <div class="form-group col-xs-8" formGroupName="book_dimension">
+      <label>page_width</label>
+      <input type="text" class="form-control" formControlName="page_width">
+      <small *ngIf="!bookForm.controls.book_dimension.controls.page_width.valid" class="text-danger">
+     Required
+    </small>
+    </div>
+    <div class="form-group col-xs-8" formGroupName="book_dimension">
+      <label>page_heigth</label>
+      <input type="text" class="form-control" formControlName="page_heigth">
+      <small *ngIf="!bookForm.controls.book_dimension.controls.page_heigth.valid" class="text-danger">
+     Required
+    </small>
     </div>
   </div>
-</div>
+
+
+  <div formGroupName="language_font">
+    
+
+
+
+  </div>
+
+
+
+
+</form>
