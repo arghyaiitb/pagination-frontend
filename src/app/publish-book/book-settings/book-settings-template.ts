@@ -14,6 +14,7 @@ export class BookDimensions {
 export class LanguageFont {
   language = '';
   font: Font;
+  font_size = '';
 }
 
 export class Font {
@@ -41,9 +42,10 @@ export const templates: BookSettings[] = [
     book_dimension: {page_width: '6in', page_heigth: '8in'},
     language_font: {
       language: 'english', font: {
-        primary_font: 'ENGLISH',
-        secondary_font: 'HINDI'
-      }
+        primary_font: 'Times New Roman',
+        secondary_font: 'Comic MS'
+      },
+      font_size: '12'
     },
     margin: {
       top_margin: '0.625in',
@@ -64,9 +66,10 @@ export const templates: BookSettings[] = [
     book_dimension: {page_width: '9in', page_heigth: '12in'},
     language_font: {
       language: 'bengali', font: {
-        primary_font: 'ENGLISH',
-        secondary_font: 'HINDI'
-      }
+        primary_font: 'Comic MS',
+        secondary_font: 'Devnagric'
+      },
+      font_size: '12'
     },
     margin: {
       top_margin: '0.625in',
@@ -79,6 +82,52 @@ export const templates: BookSettings[] = [
     addons: {
       header: 'testing',
       footer: 'testing'
+    }
+  },
+  {
+    book_dimension_template: 'Custom',
+    book_dimension: {page_width: '10in', page_heigth: '6in'},
+    language_font: {
+      language: 'Oriya', font: {
+        primary_font: 'Times New Roman',
+        secondary_font: 'Oriya local font'
+      },
+      font_size: '8'
+    },
+    margin: {
+      top_margin: '0.625in',
+      bottom_margin: '0.625in',
+      inner_margin: '0.625in',
+      outer_margin: '0.625in',
+      line_spacing: '3em',
+      paragraph_spacing: '4em'
+    },
+    addons: {
+      header: 'Yes',
+      footer: 'Yes'
+    }
+  },
+  {
+    book_dimension_template: 'Custom22',
+    book_dimension: {page_width: '10in', page_heigth: '6in'},
+    language_font: {
+      language: 'hindi', font: {
+        primary_font: 'Times New Roman',
+        secondary_font: 'Oriya local font'
+      },
+      font_size: '8'
+    },
+    margin: {
+      top_margin: '0.625in',
+      bottom_margin: '0.625in',
+      inner_margin: '0.625in',
+      outer_margin: '0.625in',
+      line_spacing: '3em',
+      paragraph_spacing: '4em'
+    },
+    addons: {
+      header: 'Yes',
+      footer: 'Yes'
     }
   }
 ];

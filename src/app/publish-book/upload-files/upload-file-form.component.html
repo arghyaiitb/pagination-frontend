@@ -1,0 +1,13 @@
+<div>
+  <form  (ngSubmit)="saveit()">
+    Upload the file
+    <input type="file" [multiple]="multiple" #fileInput>
+
+    <div class="col-xs-8">
+      <button type="submit" class="btn btn-primary pull-right">Submit</button>
+    </div>
+    <div class="clearfix"></div>
+
+
+  </form>
+</div>

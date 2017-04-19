@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {BookPrintInfo} from "./book-settings-model.interface";
 import {BookSettings, languageAvailable, templates} from "./book-settings-template";
@@ -15,6 +15,7 @@ export class BookSettingsFormComponent implements OnInit {
   public bookForm: FormGroup; // our model driven form
   private selected_template: BookSettings;
   public languagesAvailable = languageAvailable;
+  public userSelected = false;
 
   constructor(private _fb: FormBuilder) {
   } // form builder simplify form initialization
@@ -48,7 +49,8 @@ export class BookSettingsFormComponent implements OnInit {
   initLanguageFontGroup() {
     const group = this._fb.group({
       language: ['', [Validators.required]],
-      font: this._fb.group(this.initLanguageSelectorModel())
+      font: this._fb.group(this.initLanguageSelectorModel()),
+      font_size: ['', [Validators.required]]
     });
 
     return group;
@@ -114,6 +116,7 @@ export class BookSettingsFormComponent implements OnInit {
 
   loadtemplate(template: BookSettings) {
     this.selected_template = template;
+    this.userSelected = true;
     this.loadvalues();
   }
 

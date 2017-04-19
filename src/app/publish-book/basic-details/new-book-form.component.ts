@@ -24,15 +24,15 @@ export class NewBookFormComponent implements OnInit {
   ngOnInit() {
 
     this.myForm = this._fb.group({
-      title: ['Title of the ebook', [Validators.required]],
-      author: ['Book Author', [Validators.required]],
-      series: ['Yes', [Validators.required]],
-      edition: ['First', [Validators.required]],
-      description: [' Anything', [Validators.required]],
+      title: ['', [Validators.required]],
+      author: ['', [Validators.required]],
+      series: ['', [Validators.required]],
+      edition: ['', [Validators.required]],
+      description: ['', [Validators.required]],
       keywords: ['', [Validators.required]],
       reading_age: ['', [Validators.required]],
       genre: ['', [Validators.required]],
-      publishing_rights: ['Story_mirror']
+      publishing_rights: ['', [Validators.required]]
     });
 
   }

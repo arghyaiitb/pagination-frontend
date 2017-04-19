@@ -8,7 +8,7 @@
         <div class="form-group">
           <label>Book Title</label>
           <input type="text" class="form-control" formControlName="title">
-          <small *ngIf="!myForm.controls.title.valid" class="text-danger">
+          <small *ngIf="!myForm.controls.title.valid && myForm.controls.title.touched" class="text-danger">
             Required.
           </small>
         </div>
@@ -16,7 +16,7 @@
         <div class="form-group">
           <label>Book Author</label>
           <input type="text" class="form-control" formControlName="author">
-          <small *ngIf="!myForm.controls.author.valid" class="text-danger">
+          <small *ngIf="!myForm.controls.author.valid && myForm.controls.author.touched" class="text-danger">
             Required.
           </small>
         </div>
@@ -24,7 +24,7 @@
         <div class="form-group">
           <label>Book Series</label>
           <input type="text" class="form-control" formControlName="series">
-          <small *ngIf="!myForm.controls.series.valid" class="text-danger">
+          <small *ngIf="!myForm.controls.series.valid && myForm.controls.series.touched" class="text-danger">
             Required.
           </small>
         </div>
@@ -32,7 +32,7 @@
         <div class="form-group">
           <label>Book Edition</label>
           <input type="text" class="form-control" formControlName="edition">
-          <small *ngIf="!myForm.controls.edition.valid" class="text-danger">
+          <small *ngIf="!myForm.controls.edition.valid && myForm.controls.edition.touched" class="text-danger">
             Required.
           </small>
         </div>
@@ -40,7 +40,7 @@
         <div class="form-group">
           <label>Description</label>
           <input type="text" class="form-control" formControlName="description">
-          <small *ngIf="!myForm.controls.description.valid" class="text-danger">
+          <small *ngIf="!myForm.controls.description.valid && myForm.controls.description.touched" class="text-danger">
             Required.
           </small>
         </div>
@@ -48,7 +48,7 @@
         <div class="form-group">
           <label>Book keywords</label>
           <input type="text" class="form-control" formControlName="keywords">
-          <small *ngIf="!myForm.controls.keywords.valid" class="text-danger">
+          <small *ngIf="!myForm.controls.keywords.valid && myForm.controls.keywords.touched" class="text-danger">
             Required.
           </small>
         </div>
@@ -56,7 +56,7 @@
         <div class="form-group">
           <label>Book Reading age</label>
           <input type="text" class="form-control" formControlName="reading_age">
-          <small *ngIf="!myForm.controls.reading_age.valid" class="text-danger">
+          <small *ngIf="!myForm.controls.reading_age.valid && myForm.controls.reading_age.touched" class="text-danger">
             Required.
           </small>
         </div>
@@ -64,7 +64,7 @@
         <div class="form-group">
           <label>Genre</label>
           <input type="text" class="form-control" formControlName="genre">
-          <small *ngIf="!myForm.controls.genre.valid" class="text-danger">
+          <small *ngIf="!myForm.controls.genre.valid && myForm.controls.genre.touched" class="text-danger">
             Required.
           </small>
         </div>
@@ -72,7 +72,7 @@
         <div class="form-group">
           <label>Publishing rights</label>
           <input type="text" class="form-control" formControlName="publishing_rights">
-          <small *ngIf="!myForm.controls.publishing_rights.valid" class="text-danger">
+          <small *ngIf="!myForm.controls.publishing_rights.valid && myForm.controls.publishing_rights.touched" class="text-danger">
             Required.
           </small>
         </div>
