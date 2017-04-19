@@ -18,8 +18,6 @@ export class SimpleDemoComponent {
     const formData = new FormData();
     formData.append('file', inputEl.files);
       console.log(formData);
-      this.http
-        .post('http://localhost:4200/.', formData);
       // do whatever you do...
       // subscribe to observable to listen for response
     }
