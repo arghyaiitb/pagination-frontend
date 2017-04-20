@@ -3,14 +3,14 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {BookPrintInfo} from './book-settings-model.interface';
 import {BookSettings, languageAvailable, templates} from './book-settings-template';
 
-import { JsonDataService } from '../shared/json-data.service';
-
+import {JsonDataService} from '../shared/json-data.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'book-settings',
   templateUrl: './book-settings-form.component.html',
   styleUrls: ['./book-settings-form.component.css'],
-  providers: [JsonDataService]
+  providers: []
 })
 
 export class BookSettingsFormComponent implements OnInit {
@@ -20,7 +20,7 @@ export class BookSettingsFormComponent implements OnInit {
   public languagesAvailable = languageAvailable;
   public userSelected = false;
 
-  constructor(private _fb: FormBuilder, public service: JsonDataService) {
+  constructor(private _fb: FormBuilder, public service: JsonDataService, private router: Router) {
   } // form builder simplify form initialization
 
   ngOnInit() {
@@ -59,7 +59,7 @@ export class BookSettingsFormComponent implements OnInit {
 
   initLanguageSelectorModel() {
 
-    return  {
+    return {
       primary_font: ['', [Validators.required]],
       secondary_font: ['', [Validators.required]]
     };
@@ -118,9 +118,9 @@ export class BookSettingsFormComponent implements OnInit {
   save(model: BookPrintInfo, isValid: boolean) {
     // call API to save
     // ...
-    console.log(model, isValid);
+    // console.log(model, isValid);
     this.service.saveData('cool1', model);
-
+    this.router.navigate(['/publish-book/upload-files']);
   }  // Form control starts here
 
 }

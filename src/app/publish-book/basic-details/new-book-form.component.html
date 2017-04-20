@@ -72,11 +72,11 @@
         <div class="form-group">
           <label>Publishing rights</label>
           <input type="text" class="form-control" formControlName="publishing_rights">
-          <small *ngIf="!myForm.controls.publishing_rights.valid && myForm.controls.publishing_rights.touched" class="text-danger">
+          <small *ngIf="!myForm.controls.publishing_rights.valid && myForm.controls.publishing_rights.touched"
+                 class="text-danger">
             Required.
           </small>
         </div>
-
 
         <div class="margin-20">
           <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button>

@@ -2,20 +2,21 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {BasicDetails} from './new-book-model.interface';
 
-import { JsonDataService } from '../shared/json-data.service';
+import {JsonDataService} from '../shared/json-data.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'new-book-form',
   templateUrl: './new-book-form.component.html',
   styleUrls: ['./new-book-form.component.css'],
-  providers: [JsonDataService]
+  providers: []
 })
 
 export class NewBookFormComponent implements OnInit {
   public myForm: FormGroup; // our model driven form
   public book_info = false;
   // public service: JsonDataService;
-  constructor(private _fb: FormBuilder, public service: JsonDataService) {
+  constructor(private _fb: FormBuilder, public service: JsonDataService, private router: Router) {
   } // form builder simplify form initialization
 
   ngOnInit() {
@@ -39,7 +40,8 @@ export class NewBookFormComponent implements OnInit {
     // call API to save
     // ...
     this.book_info = true;
-    console.log(model, isValid);
+    // console.log(model, isValid);
     this.service.saveData('cool', model);
+    this.router.navigate(['/publish-book/book-settings']);
   }
 }

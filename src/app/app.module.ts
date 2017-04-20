@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
 import {appRouting} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -9,7 +9,6 @@ import {RecentlyPublishedComponent} from './recently-published/recently-publishe
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 import {BookPublishModule} from './publish-book/publish-book.module';
-
 
 
 @NgModule({

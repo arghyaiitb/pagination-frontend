@@ -1,6 +1,6 @@
-import {NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpModule } from '@angular/http';
+import {NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 import {CommonModule} from '@angular/common';
 
@@ -10,6 +10,9 @@ import {BookSettingsFormComponent} from './book-settings/book-settings-form.comp
 import {UploadFileFormComponent} from './upload-files/upload-file-from.component';
 import {bookPublishRouting} from './publish-book-routing.module';
 import {PublishBookComponent} from './publish-book.component';
+
+import {JsonDataService} from './shared/json-data.service';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,7 @@ import {PublishBookComponent} from './publish-book.component';
     ReactiveFormsModule,
   ],
   exports: [PublishBookComponent],
-  providers: []
+  providers: [JsonDataService]
 })
 export class BookPublishModule {
 }
