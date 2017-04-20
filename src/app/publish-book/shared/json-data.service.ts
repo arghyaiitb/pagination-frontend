@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-// import {  } from '../basic-details/new-book-model.interface';
 
 @Injectable()
 export class JsonDataService {
-  // user: InputFromUser;
+   public userss = 1;
 
-  saveData(name: string, form: any) {
+  saveData(name: string, form1: any) {
+    // this.userss.push(name: {form1});
+    this.userss = this.userss + 1;
     console.log(name);
-    console.log(form);
+    console.log(this.userss);
   };
 }

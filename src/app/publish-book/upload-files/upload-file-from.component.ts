@@ -5,7 +5,7 @@ import {Http} from '@angular/http';
   selector: 'file-upload',
   templateUrl: './upload-file-form.component.html'
 })
-export class SimpleDemoComponent {
+export class UploadFileFormComponent {
   @Input() multiple = false;
   @ViewChild('fileInput') inputEl: ElementRef;
 

@@ -1,13 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {BookPrintInfo} from "./book-settings-model.interface";
-import {BookSettings, languageAvailable, templates} from "./book-settings-template";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {BookPrintInfo} from './book-settings-model.interface';
+import {BookSettings, languageAvailable, templates} from './book-settings-template';
+
+import { JsonDataService } from '../shared/json-data.service';
 
 
 @Component({
   selector: 'book-settings',
   templateUrl: './book-settings-form.component.html',
-  styleUrls: ['./book-settings-form.component.css']
+  styleUrls: ['./book-settings-form.component.css'],
+  providers: [JsonDataService]
 })
 
 export class BookSettingsFormComponent implements OnInit {
@@ -17,7 +20,7 @@ export class BookSettingsFormComponent implements OnInit {
   public languagesAvailable = languageAvailable;
   public userSelected = false;
 
-  constructor(private _fb: FormBuilder) {
+  constructor(private _fb: FormBuilder, public service: JsonDataService) {
   } // form builder simplify form initialization
 
   ngOnInit() {
@@ -33,12 +36,11 @@ export class BookSettingsFormComponent implements OnInit {
   // BookDimensions functions start here **************************
 
   initBookdimensionGroup() {
-    const group = this._fb.group({
+    return this._fb.group({
       page_width: ['', Validators.required],
       page_heigth: ['', Validators.required]
     });
 
-    return group;
   }
 
   // BookDimensions functions end here ################################
@@ -47,24 +49,21 @@ export class BookSettingsFormComponent implements OnInit {
   // Language functions start here **************************
 
   initLanguageFontGroup() {
-    const group = this._fb.group({
+    return this._fb.group({
       language: ['', [Validators.required]],
       font: this._fb.group(this.initLanguageSelectorModel()),
       font_size: ['', [Validators.required]]
     });
 
-    return group;
-
   }
 
   initLanguageSelectorModel() {
 
-    const model = {
+    return  {
       primary_font: ['', [Validators.required]],
       secondary_font: ['', [Validators.required]]
     };
 
-    return model;
   }
 
   // Language functions End here ###################################
@@ -72,7 +71,7 @@ export class BookSettingsFormComponent implements OnInit {
   // Margin functions start here **************************
 
   initMarginSettingsGroup() {
-    const group = this._fb.group({
+    return this._fb.group({
       top_margin: ['', [Validators.required]],
       bottom_margin: ['', [Validators.required]],
       inner_margin: ['', [Validators.required]],
@@ -80,8 +79,6 @@ export class BookSettingsFormComponent implements OnInit {
       line_spacing: ['', [Validators.required]],
       paragraph_spacing: ['', [Validators.required]]
     });
-
-    return group;
 
   }
 
@@ -91,12 +88,10 @@ export class BookSettingsFormComponent implements OnInit {
   // Addons functions start here **************************
 
   initAdditionalFeaturesGroup() {
-    const group = this._fb.group({
+    return this._fb.group({
       header: ['', [Validators.required]],
       footer: ['', [Validators.required]]
     });
-
-    return group;
 
   }
 
@@ -124,6 +119,8 @@ export class BookSettingsFormComponent implements OnInit {
     // call API to save
     // ...
     console.log(model, isValid);
+    this.service.saveData('cool1', model);
+
   }  // Form control starts here
 
 }
