@@ -13,8 +13,8 @@ import 'rxjs/add/operator/map';
 })
 export class UploadFileFormComponent {
 
-  data : any;
-  errors : any;
+  data: any;
+  errors: any;
 
 
   @Input() multiple = false;

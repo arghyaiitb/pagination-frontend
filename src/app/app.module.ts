@@ -9,11 +9,11 @@ import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {RecentlyPublishedComponent} from './recently-published/recently-published.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import { FirebaseAuthenticationComponent } from './firebase-authentication/firebase-authentication.component';
+import { LoginComponent } from './login/login.component';
 
 import {BookPublishModule} from './publish-book/publish-book.module';
 import { environment } from '../environments/environment';
-
+import { AF } from '../providers/angularfirebase';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import { environment } from '../environments/environment';
     AboutComponent,
     RecentlyPublishedComponent,
     PageNotFoundComponent,
-    FirebaseAuthenticationComponent
+    LoginComponent
 
   ],
   imports: [
@@ -33,7 +33,7 @@ import { environment } from '../environments/environment';
     AngularFireAuthModule,
     BookPublishModule // PublishBookComponent is imported from this module
   ],
-  providers: [],
+  providers: [AF],
   bootstrap: [AppComponent]
 })
 export class AppModule {
