@@ -1,26 +1,39 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
-
+import {Router} from '@angular/router';
 
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
+import {AF} from '../../../providers/angularfirebase';
+
+
 @Injectable()
-
-
 export class JsonDataService {
-
+  public userid: string;
   public us = '{{';
 
 
-  constructor(private http: Http) {
+  constructor(private http: Http, public authservice: AF, public router: Router) {
 
   }
 
 
   saveData(name: string, form1: any) {
+    this.authservice.afAuth.auth.onAuthStateChanged((auth) => {
+        if (auth == null) {
+          console.log('Not Logged in.');
+          this.router.navigate(['app-login']);
+        } else {
+          console.log('logged in');
+          this.userid = auth.uid;
+        }
+      }
+    );
+    form1['userid'] = this.userid;
+    // console.log(this.userid);
     if (this.us === '{{') {
       this.us = JSON.stringify(form1);
     } else {

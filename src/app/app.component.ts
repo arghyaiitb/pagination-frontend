@@ -19,7 +19,7 @@ export class AppComponent {
           this.router.navigate(['app-login']);
           this.isLoggedIn = false;
         }else {
-          console.log('Successfully Logged in.');
+          console.log(auth.uid);
           this.isLoggedIn = true;
         }
       }
