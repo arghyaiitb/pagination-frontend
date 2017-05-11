@@ -36,6 +36,7 @@ export class UploadFileFormComponent {
       data => this.data = data,
       error => this.errors = <any>error
     );
+    console.log("working?");
 
   }
 
