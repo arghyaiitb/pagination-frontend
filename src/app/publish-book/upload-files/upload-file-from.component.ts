@@ -28,7 +28,7 @@ export class UploadFileFormComponent {
     const inputEl: HTMLInputElement = this.inputEl.nativeElement;
     const fileCount: number = inputEl.files.length;
     const formData = new FormData();
-    formData.append('file', inputEl.files[0]);
+    formData.append('doc', inputEl.files[0]);
 
 
     this.jsonDataService.postData(formData).subscribe(

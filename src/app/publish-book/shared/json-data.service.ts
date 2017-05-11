@@ -47,22 +47,11 @@ export class JsonDataService {
         .catch(this.handleError);
       console.log('res');
       console.log(this.response);
+      this.us = '{{';
     }
     console.log(this.us);
-    console.log(JSON.parse(this.us));
-    // this.us = JSON.parse(this.us);
-    console.log('hitting send pseudo data  ');
-    // this.http.post('http://127.0.0.1:8001/bookdetails/', this.us)
-    //   .toPromise()
-    //   .then(response => this.response = response.json())
-    //   .catch(this.handleError);
-    console.log('res');
-    // console.log(this.response);
   }
 
-  // testing(){
-  //
-  // }
 
   private handleError(error: any) {
     console.error('An error occurred', error);
@@ -73,7 +62,7 @@ export class JsonDataService {
   //
   postData(data: FormData): Observable<boolean> {
     console.log('hittng send post data  ');
-    return this.http.post('https://storymirror.com/ebooks/admin/products/update', data)
+    return this.http.post('http://127.0.0.1:8001/fileupload/', data)
       .map(this.extractData)
       .catch(this.handelError);
   }
