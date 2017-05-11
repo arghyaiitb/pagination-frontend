@@ -14,6 +14,7 @@ import {AF} from '../../../providers/angularfirebase';
 export class JsonDataService {
   public userid: string;
   public us = '{{';
+  public response: any[];
 
 
   constructor(private http: Http, public authservice: AF, public router: Router) {
@@ -39,8 +40,25 @@ export class JsonDataService {
     } else {
       this.us = this.us.slice(0, -1) + ',' + JSON.stringify(form1).slice(1);
     }
+    console.log(this.us);
     console.log(JSON.parse(this.us));
-  };
+    console.log('hittng send post data  ');
+    this.http.get('http://127.0.0.1:8001/bookdetails/')
+      .toPromise()
+      .then(response => this.response = response.json())
+      .catch(this.handleError);
+    console.log('res')
+    console.log(this.response);
+  }
+
+  // testing(){
+  //
+  // }
+
+  private handleError(error: any) {
+    console.error('An error occurred', error);
+    return Promise.reject(error.message || error);
+  }
 
 
   //
@@ -52,13 +70,13 @@ export class JsonDataService {
   }
 
   private extractData(res: any) {
-    let body = res.json();
+    const body = res.json();
     console.log(body);
     return body || [];
   }
 
   private handelError(error: any) {
-    let errMsg = (error.message) ? error.message :
+    const errMsg = (error.message) ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     console.error(errMsg);
     return Observable.throw(errMsg);
