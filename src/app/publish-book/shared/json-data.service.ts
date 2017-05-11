@@ -39,16 +39,25 @@ export class JsonDataService {
       this.us = JSON.stringify(form1);
     } else {
       this.us = this.us.slice(0, -1) + ',' + JSON.stringify(form1).slice(1);
+      const valu = JSON.parse(this.us);
+      console.log('hittng send post data  ');
+      this.http.post('http://127.0.0.1:8001/bookdetails/', valu)
+        .toPromise()
+        .then(response => this.response = response.json())
+        .catch(this.handleError);
+      console.log('res');
+      console.log(this.response);
     }
     console.log(this.us);
     console.log(JSON.parse(this.us));
-    console.log('hittng send post data  ');
-    this.http.get('http://127.0.0.1:8001/bookdetails/')
-      .toPromise()
-      .then(response => this.response = response.json())
-      .catch(this.handleError);
-    console.log('res')
-    console.log(this.response);
+    // this.us = JSON.parse(this.us);
+    console.log('hitting send pseudo data  ');
+    // this.http.post('http://127.0.0.1:8001/bookdetails/', this.us)
+    //   .toPromise()
+    //   .then(response => this.response = response.json())
+    //   .catch(this.handleError);
+    console.log('res');
+    // console.log(this.response);
   }
 
   // testing(){

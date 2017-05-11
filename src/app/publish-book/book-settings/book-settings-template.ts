@@ -3,24 +3,21 @@ export class BookSettings {
   book_dimension: BookDimensions;
   language_font: LanguageFont;
   margin: MarginSettings;
-  addons: AdditionalFeatures;
+  additionalFeatures: AdditionalFeatures;
 }
 
 export class BookDimensions {
   page_width = '';
-  page_heigth = '';
+  page_height = '';
 }
 
 export class LanguageFont {
   language = '';
-  font: Font;
+  primary_font = '';
+  secondary_font = '';
   font_size = '';
 }
 
-export class Font {
-  primary_font = '';
-  secondary_font = '';
-}
 
 export class MarginSettings {
   top_margin = '';
@@ -39,12 +36,11 @@ export class AdditionalFeatures {
 export const templates: BookSettings[] = [
   {
     book_dimension_template: '8x6in',
-    book_dimension: {page_width: '6in', page_heigth: '8in'},
+    book_dimension: {page_width: '6in', page_height: '8in'},
     language_font: {
-      language: 'english', font: {
-        primary_font: 'Times New Roman',
-        secondary_font: 'Comic MS'
-      },
+      language: 'english',
+      primary_font: 'Times New Roman',
+      secondary_font: 'Comic MS',
       font_size: '12'
     },
     margin: {
@@ -55,7 +51,7 @@ export const templates: BookSettings[] = [
       line_spacing: '3em',
       paragraph_spacing: '4em'
     },
-    addons: {
+    additionalFeatures: {
       header: 'testing',
       footer: 'testing'
     }
@@ -63,12 +59,11 @@ export const templates: BookSettings[] = [
 
   {
     book_dimension_template: '12x9in',
-    book_dimension: {page_width: '9in', page_heigth: '12in'},
+    book_dimension: {page_width: '9in', page_height: '12in'},
     language_font: {
-      language: 'bengali', font: {
-        primary_font: 'Comic MS',
-        secondary_font: 'Devnagric'
-      },
+      language: 'bengali',
+      primary_font: 'Comic MS',
+      secondary_font: 'Devnagric',
       font_size: '12'
     },
     margin: {
@@ -79,19 +74,18 @@ export const templates: BookSettings[] = [
       line_spacing: '3em',
       paragraph_spacing: '4em'
     },
-    addons: {
+    additionalFeatures: {
       header: 'testing',
       footer: 'testing'
     }
   },
   {
     book_dimension_template: 'Custom',
-    book_dimension: {page_width: '10in', page_heigth: '6in'},
+    book_dimension: {page_width: '10in', page_height: '6in'},
     language_font: {
-      language: 'Oriya', font: {
-        primary_font: 'Times New Roman',
-        secondary_font: 'Oriya local font'
-      },
+      language: 'Oriya',
+      primary_font: 'Times New Roman',
+      secondary_font: 'Oriya local font',
       font_size: '8'
     },
     margin: {
@@ -102,19 +96,18 @@ export const templates: BookSettings[] = [
       line_spacing: '3em',
       paragraph_spacing: '4em'
     },
-    addons: {
+    additionalFeatures: {
       header: 'Yes',
       footer: 'Yes'
     }
   },
   {
     book_dimension_template: 'Custom22',
-    book_dimension: {page_width: '10in', page_heigth: '6in'},
+    book_dimension: {page_width: '10in', page_height: '6in'},
     language_font: {
-      language: 'hindi', font: {
-        primary_font: 'Times New Roman',
-        secondary_font: 'Oriya local font'
-      },
+      language: 'hindi',
+      primary_font: 'Times New Roman',
+      secondary_font: 'Oriya local font',
       font_size: '8'
     },
     margin: {
@@ -125,7 +118,7 @@ export const templates: BookSettings[] = [
       line_spacing: '3em',
       paragraph_spacing: '4em'
     },
-    addons: {
+    additionalFeatures: {
       header: 'Yes',
       footer: 'Yes'
     }

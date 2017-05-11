@@ -29,7 +29,7 @@ export class BookSettingsFormComponent implements OnInit {
       book_dimension: this.initBookdimensionGroup(),
       language_font: this.initLanguageFontGroup(),
       margin: this.initMarginSettingsGroup(),
-      addons: this.initAdditionalFeaturesGroup()
+      additional_features: this.initAdditionalFeaturesGroup()
     });
   }
 
@@ -38,7 +38,7 @@ export class BookSettingsFormComponent implements OnInit {
   initBookdimensionGroup() {
     return this._fb.group({
       page_width: ['', Validators.required],
-      page_heigth: ['', Validators.required]
+      page_height: ['', Validators.required]
     });
 
   }
@@ -51,20 +51,13 @@ export class BookSettingsFormComponent implements OnInit {
   initLanguageFontGroup() {
     return this._fb.group({
       language: ['', [Validators.required]],
-      font: this._fb.group(this.initLanguageSelectorModel()),
+      primary_font: ['', [Validators.required]],
+      secondary_font: ['', [Validators.required]],
       font_size: ['', [Validators.required]]
     });
 
   }
 
-  initLanguageSelectorModel() {
-
-    return {
-      primary_font: ['', [Validators.required]],
-      secondary_font: ['', [Validators.required]]
-    };
-
-  }
 
   // Language functions End here ###################################
 
@@ -85,7 +78,7 @@ export class BookSettingsFormComponent implements OnInit {
   // Margin functions End here ###################################
 
 
-  // Addons functions start here **************************
+  // additional_features functions start here **************************
 
   initAdditionalFeaturesGroup() {
     return this._fb.group({
@@ -95,7 +88,7 @@ export class BookSettingsFormComponent implements OnInit {
 
   }
 
-  // Addons functions End here ###################################
+  // additional_features functions End here ###################################
 
 
   // Form control starts here
@@ -105,7 +98,7 @@ export class BookSettingsFormComponent implements OnInit {
       book_dimension: this.selected_template.book_dimension,
       language_font: this.selected_template.language_font,
       margin: this.selected_template.margin,
-      addons: this.selected_template.addons
+      additional_features: this.selected_template.additionalFeatures
     });
   }
 

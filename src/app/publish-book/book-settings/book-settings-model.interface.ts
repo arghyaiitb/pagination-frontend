@@ -2,14 +2,12 @@ export interface BookPrintInfo {
   book_dimension_template: string,
   book_dimension: {
     page_width: string,
-    page_heigth: string
+    page_height: string
   },
   language_font: {
     language: string,
-    font: {
-      primary_font: string,
-      secondary_font: string
-    }
+    primary_font: string,
+    secondary_font: string
   },
   margin: {
     top_margin: string,
@@ -19,7 +17,7 @@ export interface BookPrintInfo {
     line_spacing: string,
     paragraph_spacing: string
   },
-  addons: {
+  additional_features: {
     header: string,
     footer: string
   }
