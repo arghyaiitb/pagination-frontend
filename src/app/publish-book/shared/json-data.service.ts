@@ -33,7 +33,7 @@ export class JsonDataService {
         }
       }
     );
-    form1['userid'] = this.userid;
+    form1['user_unique_id'] = this.userid;
     // console.log(this.userid);
     if (this.us === '{{') {
       this.us = JSON.stringify(form1);
@@ -62,6 +62,7 @@ export class JsonDataService {
   //
   postData(data: FormData): Observable<boolean> {
     console.log('hittng send post data  ');
+    data.append('user_unique_id', this.userid);
     return this.http.post('http://127.0.0.1:8001/fileupload/', data)
       .map(this.extractData)
       .catch(this.handelError);

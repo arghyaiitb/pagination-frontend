@@ -29,6 +29,7 @@ export class UploadFileFormComponent {
     const fileCount: number = inputEl.files.length;
     const formData = new FormData();
     formData.append('doc', inputEl.files[0]);
+    // formData.append('user_unique_id', )
 
 
     this.jsonDataService.postData(formData).subscribe(
