@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {BookPrintInfo} from './book-settings-model.interface';
-import {BookSettings, languageAvailable, templates} from './book-settings-template';
+import {BookSettings, languageAvailable, templates, englishfont} from './book-settings-template';
 
 import {JsonDataService} from '../shared/json-data.service';
 import {Router} from '@angular/router';
@@ -18,6 +18,7 @@ export class BookSettingsFormComponent implements OnInit {
   public bookForm: FormGroup; // our model driven form
   private selected_template: BookSettings;
   public languagesAvailable = languageAvailable;
+  public englishfont = englishfont;
   public userSelected = false;
 
   constructor(private _fb: FormBuilder, public service: JsonDataService, private router: Router) {

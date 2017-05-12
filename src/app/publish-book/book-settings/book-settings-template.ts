@@ -40,7 +40,7 @@ export const templates: BookSettings[] = [
     language_font: {
       language: 'english',
       primary_font: 'Times New Roman',
-      secondary_font: 'Comic MS',
+      secondary_font: 'Arial',
       font_size: '12'
     },
     margin: {
@@ -61,9 +61,9 @@ export const templates: BookSettings[] = [
     book_dimension_template: '12x9in',
     book_dimension: {page_width: '9in', page_height: '12in'},
     language_font: {
-      language: 'bengali',
-      primary_font: 'Comic MS',
-      secondary_font: 'Devnagric',
+      language: 'hindi',
+      primary_font: 'Arial',
+      secondary_font: 'Arial',
       font_size: '12'
     },
     margin: {
@@ -78,52 +78,9 @@ export const templates: BookSettings[] = [
       header: 'testing',
       footer: 'testing'
     }
-  },
-  {
-    book_dimension_template: 'Custom',
-    book_dimension: {page_width: '10in', page_height: '6in'},
-    language_font: {
-      language: 'Oriya',
-      primary_font: 'Times New Roman',
-      secondary_font: 'Oriya local font',
-      font_size: '8'
-    },
-    margin: {
-      top_margin: '0.625in',
-      bottom_margin: '0.625in',
-      inner_margin: '0.625in',
-      outer_margin: '0.625in',
-      line_spacing: '3em',
-      paragraph_spacing: '4em'
-    },
-    additionalFeatures: {
-      header: 'Yes',
-      footer: 'Yes'
-    }
-  },
-  {
-    book_dimension_template: 'Custom22',
-    book_dimension: {page_width: '10in', page_height: '6in'},
-    language_font: {
-      language: 'hindi',
-      primary_font: 'Times New Roman',
-      secondary_font: 'Oriya local font',
-      font_size: '8'
-    },
-    margin: {
-      top_margin: '0.625in',
-      bottom_margin: '0.625in',
-      inner_margin: '0.625in',
-      outer_margin: '0.625in',
-      line_spacing: '3em',
-      paragraph_spacing: '4em'
-    },
-    additionalFeatures: {
-      header: 'Yes',
-      footer: 'Yes'
-    }
   }
 ];
 
 
-export const languageAvailable = ['english', 'hindi', 'oriya', 'bengali'];
+export const languageAvailable = ['english', 'hindi'];
+export const englishfont = ['Times New Roman', 'Arial'];
