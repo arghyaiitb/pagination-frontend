@@ -1,33 +1,32 @@
-
-  <div class="container-fluid">
-    <div *ngIf="isLoggedIn" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <header>
-        <nav class="navbar navbar-inverse">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a routerLink="/home" class="navbar-brand" routerLinkActive="active">pagination</a>
-            </div>
-            <ul class="nav navbar-nav">
-              <li><a routerLink="/home" routerLinkActive="active">home</a></li>
-              <li><a routerLink="/publish-book" routerLinkActive="active">Publish Book</a></li>
-              <li><a routerLink="/recently-published" routerLinkActive="active">Recently Published</a></li>
-              <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-              <li class = "navbar-right"><a  (click)="logout()">Logout</a></li>
-            </ul>
-
+<div class="container-fluid">
+  <div *ngIf="isLoggedIn" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <header>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a routerLink="/home" class="navbar-brand" routerLinkActive="active">pagination</a>
           </div>
-        </nav>
-      </header>
-      <footer class="footer navbar-fixed-bottom">
-        <div class="container text-center">
-          Copyright &copy; <a href='https://www.linkedin.com/in/arghyasaha/'>argo</a> 2017
-        </div>
-      </footer>
+          <ul class="nav navbar-nav">
+            <li><a routerLink="/home" routerLinkActive="active">home</a></li>
+            <li><a routerLink="/publish-book" routerLinkActive="active">Publish Book</a></li>
+            <li><a routerLink="/recently-published" routerLinkActive="active">Recently Published</a></li>
+            <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+            <li class="navbar-right"><a (click)="logout()">Logout</a></li>
+          </ul>
 
-    </div>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
+        </div>
+      </nav>
+    </header>
+    <footer class="footer navbar-fixed-bottom">
+      <div class="container text-center">
+        Copyright &copy; <a href='https://www.linkedin.com/in/arghyasaha/'>argo</a> 2017
+      </div>
+    </footer>
 
   </div>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+</div>
 

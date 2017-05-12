@@ -13,6 +13,6 @@
 .c {
   margin-left: auto;
   margin-right: auto;
-  height: 1000px;/* Your size in px, else it will expand to your screen size!*/
-  width:  1000px;/* Your size in px, else it will expand to your screen size!*/
+  height: 1000px; /* Your size in px, else it will expand to your screen size!*/
+  width: 1000px; /* Your size in px, else it will expand to your screen size!*/
 }

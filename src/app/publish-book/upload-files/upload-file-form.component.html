@@ -1,20 +1,26 @@
 <div>
 
-  <button *ngIf="data; else elseBlock" >
-
-    <div aria-label="My icon" [inlineSVG]="'/assets/img/loading_icon.svg'"></div>
+  <button *ngIf="data; else elseBlock">
     <a href="{{data.pdf_file}}"> download</a>
+    <div class="a">
+      <div class="b">
+        <div class="c">
+          <div aria-label="My icon" [inlineSVG]="'/assets/img/loading_icon.svg'"></div>
+        </div>
+      </div>
+    </div>
+
   </button>
   <ng-template #elseBlock>
-    <form (ngSubmit)="saveit()" >
-    Upload the file
-    <input name='doc' type="file" [multiple]="multiple" #fileInput>
+    <form (ngSubmit)="saveit()">
+      Upload the file
+      <input name='doc' type="file" [multiple]="multiple" #fileInput>
 
-    <div class="clearfix"></div>
-    <div class="col-xs-8">
-      <button type="submit" class="btn btn-primary pull-right">Submit</button>
-    </div>
-  </form>
+      <div class="clearfix"></div>
+      <div class="col-xs-8">
+        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+      </div>
+    </form>
   </ng-template>
 
 </div>

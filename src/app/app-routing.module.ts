@@ -1,4 +1,4 @@
-import {RouterModule, Routes, CanActivate} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
 
 import {AboutComponent} from './about/about.component';

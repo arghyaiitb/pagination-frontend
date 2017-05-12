@@ -1,0 +1,115 @@
+<svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	  viewBox="0 0 1000 1000" enable-background="new 0 0 3000 3000" xml:space="preserve" >
+
+	<defs>
+
+         <linearGradient id="kuchaur" x1="0%" y1="0%" x2="100%" y2="0%" >
+
+            <stop offset="0%" stop-color="#ff0000">
+                <animate attributeName="stop-color" values="#ff0000; #0000ff; #00ffff; #ff0000" dur="5s" repeatCount="indefinite"></animate>
+            </stop>
+
+            <stop offset="50%" stop-color="#00ffff">
+                <animate attributeName="stop-color" values="#00ffff; #ff0000; #0000ff ; #00ffff" dur="5s" repeatCount="indefinite"></animate>
+            </stop>
+
+            <stop offset="100%" stop-color="#0000ff">
+                <animate attributeName="stop-color" values="#0000ff; #00ffff; #ff0000; #0000ff " dur="5s" repeatCount="indefinite"></animate>
+            </stop>
+
+        </linearGradient>
+
+         <linearGradient id="kuchaur1" x1="0%" y1="0%" x2="100%" y2="0%" >
+
+            <stop offset="100%" stop-color="#ff0000">
+                <animate attributeName="stop-color" values="#ff0000; #0000ff; #00ffff; #ff0000" dur="5s" repeatCount="indefinite"></animate>
+            </stop>
+
+            <stop offset="50%" stop-color="#00ffff">
+                <animate attributeName="stop-color" values="#00ffff; #ff0000; #0000ff ; #00ffff" dur="5s" repeatCount="indefinite"></animate>
+            </stop>
+
+            <stop offset="100%" stop-color="#0000ff">
+                <animate attributeName="stop-color" values="#0000ff; #00ffff; #ff0000; #0000ff " dur="5s" repeatCount="indefinite"></animate>
+            </stop>
+
+        </linearGradient>
+
+         <linearGradient id="kuchaur2" x1="0%" y1="0%" x2="100%" y2="0%" >
+
+             <stop offset="100%" stop-color="#0000ff">
+                <animate attributeName="stop-color" values="#0000ff; #00ffff; #ff0000; #0000ff " dur="5s" repeatCount="indefinite"></animate>
+            </stop>
+
+            <stop offset="50%" stop-color="#00ffff">
+                <animate attributeName="stop-color" values="#00ffff; #ff0000; #0000ff ; #00ffff" dur="5s" repeatCount="indefinite"></animate>
+            </stop>
+
+             <stop offset="100%" stop-color="#ff0000">
+                <animate attributeName="stop-color" values="#ff0000; #0000ff; #00ffff; #ff0000" dur="5s" repeatCount="indefinite"></animate>
+            </stop>
+
+
+        </linearGradient>
+
+		<style type="text/css">
+			#storymirror {
+            stroke-dasharray: 2000;
+            stroke-dashoffset:0;
+            -webkit-animation:dash 6s linear forwards;
+            -o-animation:dash 6s linear forwards;
+            animation: dash 6s linear forwards;
+            }
+
+            #logo:hover #storymirror
+            {
+                fill: url(#kuchaur);
+            }
+
+            	#storymirror1 {
+            stroke-dasharray: 50;
+            stroke-dashoffset:0;
+            -webkit-animation:dash 50s linear forwards;
+            -o-animation:dash 50s linear forwards;
+            animation: dash 50s linear forwards;
+            }
+            #logo:hover #storymirror1
+            {
+                fill: url(#kuchaur1);
+            }
+            	#storymirror2 {
+            stroke-dasharray: 50;
+            stroke-dashoffset:0;
+            -webkit-animation:dash 50s linear forwards;
+            -o-animation:dash 50s linear forwards;
+            animation: dash 50s linear forwards;
+            }
+
+            #logo:hover #storymirror2
+            {
+                fill: url(#kuchaur2);
+            }
+
+            @-webkit-keyframes dash {
+            from {
+            stroke-dashoffset: 2000;
+            }
+            to {
+            stroke-dashoffset: 0;
+            }
+            }
+		</style>
+	</defs>
+
+
+<path id="storymirror" fill="none" stroke="grey" stroke-width=".5"  d="M89.677,22.973c2.553,0.384,4.401,1.034,4.401,1.034
+	s-0.079,48.101-0.079,69.219c-1.219,0-6.761,0-7.981,0c0-20.896,0-41.794,0-62.691c-12.04-1.701-19.621,1.047-29.272,7.777
+	c0,12.192,0,25.587,0,38.572c0,4.379,0,13.397,0,13.397l-3.416,6.85L49.915,90.3c0,0,0-8.586,0-13.172c0-10.791,0-21.177,0-32.444
+	c0-2.289,0-6.342,0-6.342s-8.634-5.197-10.978-6.098c-6.774-2.605-14.266-3.834-21.955-1.952c-6.09,6.527-0.171,17.48,2.684,25.369
+	c2.35,6.495,4.363,13.823,3.903,21.224c-0.461,7.416-3.316,13.134-7.319,18.295c-3.578,0-11.201,0-11.201,0s1.158-1.38,1.688-1.952
+	c4.734-5.101,9.459-11.988,8.781-23.174c-0.351-5.79-2.228-11.616-4.147-16.831c-2.036-5.53-4.6-10.792-5.123-15.856
+	c-0.975-9.437,4.353-15.091,12.197-15.856c2.604-0.254,5.255-0.128,7.562,0c11.03,0.611,20.066,4.408,28.053,8.294
+	c0.335,0.059,1.82-1.13,2.684-1.708C64.218,23.091,77.404,21.274,89.677,22.973z"/>
+<circle id="storymirror1" fill="none" stroke="grey" stroke-width=".5" cx="21.403" cy="8.942" r="7.338"/>
+<circle id="storymirror2" fill="none" stroke="grey" stroke-width=".5" cx="83.644" cy="8.942" r="7.337"/>
+</svg>

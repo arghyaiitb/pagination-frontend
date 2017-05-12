@@ -9,7 +9,8 @@ import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'file-upload',
-  templateUrl: './upload-file-form.component.html'
+  templateUrl: './upload-file-form.component.html',
+  styleUrls: ['./upload-file-form.component.css']
 })
 export class UploadFileFormComponent {
 
@@ -29,15 +30,12 @@ export class UploadFileFormComponent {
     const fileCount: number = inputEl.files.length;
     const formData = new FormData();
     formData.append('doc', inputEl.files[0]);
-    // formData.append('user_unique_id', )
 
 
     this.jsonDataService.postData(formData).subscribe(
       data => this.data = data,
       error => this.errors = <any>error
     );
-    console.log("working?");
-
   }
 
 

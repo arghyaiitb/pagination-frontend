@@ -12,7 +12,7 @@ import {bookPublishRouting} from './publish-book-routing.module';
 import {PublishBookComponent} from './publish-book.component';
 
 import {JsonDataService} from './shared/json-data.service';
-import { InlineSVGModule } from 'ng-inline-svg';
+import {InlineSVGModule} from 'ng-inline-svg';
 
 @NgModule({
   declarations: [

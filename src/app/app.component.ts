@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import { AF } from '../providers/angularfirebase';
-import { Router } from '@angular/router';
+import {AF} from '../providers/angularfirebase';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class AppComponent {
           console.log('Not Logged in.');
           this.router.navigate(['app-login']);
           this.isLoggedIn = false;
-        }else {
+        } else {
           console.log(auth.uid);
           this.isLoggedIn = true;
         }
